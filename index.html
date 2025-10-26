@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfólio Premium - Desenvolvedor Web</title>
+<style>
+body {margin:0; font-family:sans-serif; background:#f3f4f6; color:#111827;}
+header {padding:30px 20px; background:#4f46e5; color:white; text-align:center;}
+header h1 {margin:0; font-size:2rem;}
+header p {margin-top:5px; font-size:1.1rem;}
+section {padding:40px 20px; max-width:1200px; margin:auto;}
+h2 {color:#4f46e5; margin-bottom:30px; text-align:center;}
+p {color:#374151; line-height:1.6;}
+
+/* Sobre mim */
+.about {text-align:center; margin-bottom:50px;}
+
+/* Projetos */
+.projects-grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:25px;}
+.project-card {background:white; padding:25px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.1); transition:0.3s; text-align:center;}
+.project-card:hover {transform:translateY(-5px); box-shadow:0 12px 30px rgba(0,0,0,0.2);}
+.project-card h3 {color:#4f46e5; margin-bottom:15px; font-size:1.4rem;}
+.project-card p {color:#374151; margin-bottom:20px;}
+.project-card button {background:#4f46e5; color:white; border:none; padding:12px 18px; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s;}
+.project-card button:hover {background:#3730a3;}
+
+/* Contato */
+.contact form {display:flex; flex-direction:column; max-width:450px; margin:auto; gap:15px;}
+.contact input, .contact textarea {padding:12px; border-radius:6px; border:1px solid #ccc; font-size:14px;}
+.contact button {background:#4f46e5; color:white; border:none; padding:14px; border-radius:8px; cursor:pointer; font-weight:600; transition:0.3s;}
+.contact button:hover {background:#3730a3;}
+
+/* Tabs internas */
+.tabs {display:flex; gap:5px; margin-bottom:15px; flex-wrap:wrap; justify-content:center;}
+.tab {flex:1; padding:10px; text-align:center; background:#e2e8f0; border-radius:6px; cursor:pointer; font-weight:600; transition:0.3s;}
+.tab.active {background:#4f46e5; color:white;}
+
+/* Sections internas */
+.section {padding:15px; background:#f9fafb; border-radius:8px; margin-top:10px; display:none;}
+.section.active {display:block;}
+
+/* Responsivo */
+@media(max-width:600px){section{padding:20px;} .project-card{padding:20px;}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Meu Portfólio Premium</h1>
+  <p>Desenvolvedor Web – Sistemas de Controle e Dashboards Profissionais</p>
+</header>
+
+<section class="about">
+  <h2>Sobre Mim</h2>
+  <p>Sou desenvolvedor web especializado em sistemas de gestão, dashboards e controle de dados.  
+     Crio soluções práticas, responsivas e funcionais que ajudam empresas e profissionais a organizar suas finanças, estoque e processos diários.</p>
+</section>
+
+<section class="projects">
+  <h2>Projetos</h2>
+  <div class="projects-grid">
+    <!-- Projeto 1 -->
+    <div class="project-card">
+      <h3>Controle Financeiro PRO</h3>
+      <p>Dashboard completo de finanças com gráficos de receita e despesa, saldo em tempo real e histórico detalhado.</p>
+      <div class="tabs">
+        <div class="tab active" data-tab="cf-dashboard">Resumo</div>
+        <div class="tab" data-tab="cf-transacoes">Transações</div>
+      </div>
+      <div id="cf-dashboard" class="section active">
+        <p>Visualize o saldo, receitas, despesas e alertas de movimentações em um painel limpo e interativo.</p>
+      </div>
+      <div id="cf-transacoes" class="section">
+        <p>Adicione receitas e despesas, categorize, gere histórico detalhado e exporte relatórios em PDF ou CSV.</p>
+      </div>
+    </div>
+
+    <!-- Projeto 2 -->
+    <div class="project-card">
+      <h3>Controle de Estoque Premium</h3>
+      <p>Sistema avançado de estoque com entrada/saída de produtos, alerta de validade, estoque em tempo real e histórico completo.</p>
+      <div class="tabs">
+        <div class="tab active" data-tab="ce-entrada">Entrada</div>
+        <div class="tab" data-tab="ce-saida">Saída</div>
+        <div class="tab" data-tab="ce-estoque">Estoque</div>
+        <div class="tab" data-tab="ce-historico">Histórico</div>
+      </div>
+      <div id="ce-entrada" class="section active">
+        <p>Adicione produtos ao estoque com quantidade, categoria e validade, gerando alertas automáticos.</p>
+      </div>
+      <div id="ce-saida" class="section">
+        <p>Remova produtos do estoque, registre saídas no histórico e visualize alertas de baixa quantidade.</p>
+      </div>
+      <div id="ce-estoque" class="section">
+        <p>Visualização em tempo real de todos os produtos com alertas de validade e estoque baixo.</p>
+      </div>
+      <div id="ce-historico" class="section">
+        <p>Histórico completo de entradas, saídas e produtos excluídos, garantindo total controle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <h2>Contato</h2>
+  <p>Entre em contato diretamente pelo WhatsApp ou envie uma mensagem:</p>
+  <p><a href="https://wa.me/5584994196961" target="_blank" style="color:#4f46e5; font-weight:600;">WhatsApp: (84) 99419-6961</a></p>
+  <form onsubmit="alert('Mensagem enviada!'); return false;">
+    <input type="text" placeholder="Seu nome" required>
+    <input type="email" placeholder="Seu email" required>
+    <textarea placeholder="Sua mensagem" rows="4" required></textarea>
+    <button type="submit">Enviar Mensagem</button>
+  </form>
+</section>
+
+<script>
+// Tabs internas dos projetos
+document.querySelectorAll('.project-card').forEach(project=>{
+  const tabs = project.querySelectorAll('.tab');
+  tabs.forEach(tab=>{
+    tab.addEventListener('click',()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      project.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      project.querySelector('#'+tab.dataset.tab).classList.add('active');
+    });
+  });
+});
+</script>
+
+</body>
+</html>
